@@ -8,7 +8,7 @@ import numpy as np
 dx, dy = 0.05, 0.05
 
 # 产生两个二维坐标网格数组，分别描述坐标x方向和y方向的分布
-y, x = np.mgrid[slice(1, 5 + dy, dy), slice(1, 5 + dx, dx)]
+y, x = np.mgrid[slice(1, 11 + dy, dy), slice(1, 5 + dx, dx)]
 
 # 基于x、y产生一个随空间坐标变化的二维数组
 z = np.sin(x)**5 + np.cos(y*x) * np.cos(x)**2
@@ -16,10 +16,11 @@ z = np.sin(x)**5 + np.cos(y*x) * np.cos(x)**2
 # x和y描述了绘图的范围，z是在这个范围内的某个量的值，
 # 对pcolormesh来说，需要将z数组的最后一行（列）去掉
 z = z[:-1, :-1]
-levels = MaxNLocator(nbins=15).tick_values(z.min(), z.max())
+levels = MaxNLocator(nbins=20).tick_values(z.min(), z.max())
 
 # 选择colormap
-cmap = plt.get_cmap('RdYlGn')
+cmap = plt.get_cmap('jet')
+
 #通过levels定义一个基于z中数据的规范化对象实例，它可以把z中的值与levels进行对应转换
 norm = BoundaryNorm(levels, ncolors=cmap.N, clip=True)
 

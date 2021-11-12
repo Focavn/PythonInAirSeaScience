@@ -23,7 +23,7 @@ plt.grid(True, linestyle=':')
 # symmetric log
 plt.subplot(223)
 plt.plot(x, y - y.mean())
-plt.yscale('symlog', linthreshy=0.01)
+plt.yscale('symlog', linthresh=0.001)
 plt.title('symlog')
 plt.grid(True, linestyle=':')
 
@@ -37,6 +37,6 @@ plt.grid(True, linestyle=':')
 # 调整各子图的显示以及logit图中y轴刻度标签的格式
 plt.gca().yaxis.set_minor_formatter(NullFormatter())
 plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95,
-                    hspace=0.25, wspace=0.35)
+                    hspace=0.25, wspace=0.5)
 
 plt.show()

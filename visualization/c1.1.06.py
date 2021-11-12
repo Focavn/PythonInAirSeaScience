@@ -6,7 +6,7 @@ s = np.cos(np.pi*t)
 plt.plot(t, s, lw=2)
 
 plt.annotate('Local Maximum', xy=(2, 1), xytext=(3, 1.5), color='r',
-             arrowprops=dict(facecolor='r', edgecolor='r', shrink=0.05))
+             arrowprops=dict(facecolor='r', edgecolor='b', shrink=0.005))
 
 plt.ylim(-2, 2)
 plt.show()
